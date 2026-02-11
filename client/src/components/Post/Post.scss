@@ -1,0 +1,60 @@
+$background: rgb(255, 255, 255);
+$buttonColor: rgb(77, 181, 249);
+$buttonActive: rgb(24, 119, 242);
+
+.post{
+    width: 30em;
+    background-color: $background;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    margin-bottom: 1em;
+    &-heading{
+        height: 3.5em;
+        display: flex;
+        align-items: center;
+        & img{
+            height: 2.5em;
+            width: 2.5em;
+            border-radius: 50%;
+            margin: .5em;
+        }
+        &-username{
+            font-weight: 500;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+    }
+    &-content{
+        display: flex;
+        background-color: lightgrey;
+        & img{
+            width: 100%;
+        }
+    }
+    &-footer{
+        &-like{
+            height: 3em;
+            display: flex;
+            align-items: center;
+            &-button{
+                font-size: 1rem;
+                display: flex;
+                padding: 0;
+                background-color: $background;
+                border: none;
+                margin-left: .5em;
+                cursor: pointer;
+                & img{
+                    width: 2.5em;
+                }
+            }
+            &-number{
+                margin-left: .3em;
+                font-size: 1rem;
+                font-weight: 500;
+            }
+        }
+    }
+}

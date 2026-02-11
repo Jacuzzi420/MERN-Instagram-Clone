@@ -1,0 +1,81 @@
+$background: rgb(255, 255, 255);
+$buttonColor: rgb(77, 181, 249);
+$buttonActive: rgb(24, 119, 242);
+
+.show{
+    font-size: 1rem;
+    border: none;
+    background-color: $background;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 3em;
+    border-top: 1px solid lightgrey;
+    cursor: pointer;
+    & img{
+        width: 3.5em;
+    }
+}
+
+.comments{
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    border-top: 1px solid lightgrey;
+    &-comment{
+        display: flex;
+        padding: .3em .6em;
+        &-username{
+            font-weight: 500;
+            margin-right: .3em;
+        }
+        &-content{
+            min-width: 0%;
+            overflow-wrap: break-word;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+    }
+    &-empty{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 2em;
+    }
+    &.active{
+        display: flex;
+    }
+}
+
+.comment{
+    display: flex;
+    align-items: center;
+    border-top: 1px solid lightgrey;
+    height: 3em;
+    & input{
+        margin-left: 1.2em;
+        width: 24em;
+        font-size: 1rem;
+        border: none;
+        &:focus{
+            outline: none;
+        }
+    }
+    & button{
+        font-size: 1rem;
+        font-weight: 550;
+        background-color: $background;
+        border: none;
+        color: $buttonColor;
+        &.active{
+            color: $buttonActive;
+            &:hover{
+                color: black;
+                cursor: pointer;
+            }
+        }
+    }
+}

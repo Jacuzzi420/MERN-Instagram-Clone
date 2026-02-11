@@ -1,0 +1,79 @@
+$formColor: rgb(255, 255, 255);
+$inputColor: rgb(250, 250, 250);
+$buttonColor: rgb(77, 181, 249);
+$buttonActive: rgb(0, 149, 246);
+$buttonHover: rgb(24, 119, 242);
+
+.login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &-form{
+        margin-top: 5em;
+        border: 1px solid lightgrey;
+        background-color: $formColor;
+        padding: 3em;
+        &-logo{
+            display: flex;
+            justify-content: center;
+            padding-bottom: 2.5em;
+        }
+        &-inputs{
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+            gap: .5em;
+            &-input{
+                width: 20em;
+                padding: .7em;
+                border: 1px solid lightgray;
+                border-radius: 3px;
+                background-color: $inputColor;
+                &:focus{
+                    outline: none;
+                    border: 1px solid grey;
+                }
+            }
+        }
+        &-button{
+            width: 21.5em;
+            padding: .4em;
+            margin-top: 2em;
+            color: white;
+            font-weight: 900;
+            border: none;
+            background-color: $buttonColor;
+            border-radius: 8px;
+            &.active{
+                background-color: $buttonActive;
+                &:hover{
+                    background-color: $buttonHover;
+                    cursor: pointer;
+                }
+            }
+        }
+        &-error{
+            padding-top: 2em;
+            text-align: center;
+            color: $buttonHover;
+        }
+    }
+    &-register{
+        margin-top: .5em;
+        width: 24em;
+        padding: 1em 0em;
+        border: 1px solid lightgrey;
+        background-color: $formColor;
+        text-align: center;
+        & a{
+            color: $buttonColor;
+            text-decoration: none;
+        }
+    }
+    &-footer{
+        margin-top: 26em;
+        color: gray;
+        font-size: .9rem;
+        padding: 2em;
+    }
+}

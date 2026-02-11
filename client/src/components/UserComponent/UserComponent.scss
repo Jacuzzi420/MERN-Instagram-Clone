@@ -1,0 +1,64 @@
+$background: rgba(0, 0, 0, 0.5);
+
+.element{
+    &-small{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        position: relative;
+        & img{
+            width: 100%;
+            height: 100%;
+        }
+        &-hover{
+            display: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background-color: $background;
+            justify-content: center;
+            align-items: center;
+            gap: .5em;
+            color: white;
+            & img{
+                height: auto;
+                width: 1.5em;
+            }
+        }
+        &:hover > .element-small-hover{
+            display: flex;
+        }
+    }
+    &-big{
+        display: none;
+        justify-content: center;
+        align-items: flex-start;
+        overflow: auto;
+        width: 100vw;
+        height: 90vh;
+        position: absolute;
+        z-index: 10;
+        background-color: $background;
+        padding-top: 10vh;
+        top: 0;
+        left: 0;
+        &-exit{
+            background-color: transparent;
+            border: none;
+            position: absolute;
+            top: 1em;
+            right: 1em;
+            cursor: pointer;
+            & img{
+                width: 1.5em;
+            }
+        }
+        &.active{
+            display: flex;
+        }
+    }
+    &:focus-visible{
+        outline-offset: 1px;
+    }
+}

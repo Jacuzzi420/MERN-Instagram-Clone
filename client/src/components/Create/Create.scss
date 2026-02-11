@@ -1,0 +1,121 @@
+$background: rgba(0, 0, 0, 0.5);
+$backgroundWindow: rgb(255, 255, 255);
+$buttonColor: rgb(0, 149, 246);
+$buttonHover: rgb(24, 119, 242);
+
+.create{
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 10;
+    background-color: $background;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    &-exit{
+        background-color: transparent;
+        border: none;
+        position: absolute;
+        top: 1em;
+        right: 1em;
+        cursor: pointer;
+        & img{
+            width: 1.5em;
+        }
+    }
+    &-window{
+        width: 45em;
+        height: 48em;
+        background-color: $backgroundWindow;
+        opacity: 3;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        &-heading{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 3em;
+            border-bottom: 1px solid lightgrey;
+            font-weight: 500;
+            &-back{
+                display: flex;
+                padding: 0;
+                position: absolute;
+                left: 1em;
+                font-size: 1rem;
+                background-color: $backgroundWindow;
+                border: none;
+                cursor: pointer;
+                img {
+                    width: 2em;
+                }
+            }
+            &-share{
+                background-color: $backgroundWindow;
+                border: none;
+                font-size: 1rem;
+                font-weight: 550;
+                color: $buttonColor;
+                &:hover{
+                    color: $buttonHover;
+                    cursor: pointer;
+                }
+            }
+        }
+        &-main{
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            padding: 1em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+            &-box{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                & img{
+                    width: 5em;
+                }
+                & h2{
+                    font-weight: 500;
+                }
+                & button{
+                    font-size: 0.9rem;
+                    font-weight: 550;
+                    color: white;
+                    background-color: $buttonColor;
+                    border-radius: 5px;
+                    padding: .6em 1.1em;
+                    border: none;
+                    &:hover{
+                        background-color: $buttonHover;
+                        cursor: pointer;
+                    }
+                }
+            }
+            &.active{
+                background-color: lightgray;
+                border-radius: 0px 0px 15px 15px;
+            }
+        }
+        @media (max-width: 1200px){
+            width: 60vw;
+            height: calc(60vw + 3em);
+        }
+        @media (max-height: 850px){
+            width: 90vh;
+            height: calc(85vh + 3em);
+        }
+    }
+    &-input{
+        display: none;
+    }
+}

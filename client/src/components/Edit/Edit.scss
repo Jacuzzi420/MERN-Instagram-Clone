@@ -1,0 +1,122 @@
+$background: rgba(0, 0, 0, 0.5);
+$backgroundWindow: rgb(255, 255, 255);
+$inputColor: rgb(250, 250, 250);
+$buttonColor: rgb(77, 181, 249);
+$buttonActive: rgb(0, 149, 246);
+$buttonHover: rgb(24, 119, 242);
+
+.edit-panel{
+    position: absolute;
+    background-color: $background;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    &-exit{
+        background-color: transparent;
+        border: none;
+        position: absolute;
+        top: 1em;
+        right: 1em;
+        cursor: pointer;
+        & img{
+            height: auto;
+            width: 1.5em;
+            border-radius: 0%;
+        }
+    }
+    &-window{
+        background-color: $backgroundWindow;
+        opacity: 3;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        &-heading{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 3em;
+            border-bottom: 1px solid lightgrey;
+            font-weight: 500;
+        }
+        &-main{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &-form{
+                padding: 2em;
+                display: flex;
+                flex-direction: column;
+                gap: 1em;
+                &-image{
+                    display: flex;
+                    justify-content: space-between;
+                    & img{
+                        width: 2em;
+                        height: 2em;
+                        border-radius: 50%;
+                    }
+                    & button{
+                        background-color: $backgroundWindow;
+                        border: none;
+                        font-size: 1rem;
+                        font-weight: 550;
+                        height: auto;
+                        width: auto;
+                        color: $buttonHover;
+                        margin: 0;
+                        padding: 0;
+                        &:hover{
+                            color: black;
+                            cursor: pointer;
+                            background-color: $backgroundWindow;
+                        }
+                    }
+                    &-input{
+                        display: none;
+                    }
+                }
+                &-button{
+                    width: 16.6em;
+                    padding: .4em;
+                    color: white;
+                    font-weight: 900;
+                    border: none;
+                    background-color: $buttonColor;
+                    border-radius: 8px;
+                    &.active{
+                        background-color: $buttonActive;
+                        &:hover{
+                            background-color: $buttonHover;
+                            cursor: pointer;
+                        }
+                    }
+                }
+                &-message{
+                    text-align: center;
+                    font-size: 1rem;
+                    color: $buttonHover;
+                    font-weight: 500;
+                }
+                & input{
+                    width: 15em;
+                    padding: .7em;
+                    border: 1px solid lightgray;
+                    border-radius: 3px;
+                    background-color: $inputColor;
+                    &:focus{
+                        outline: none;
+                        border: 1px solid grey;
+                    }
+                }
+            }
+        }
+    }
+}
