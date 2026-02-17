@@ -72,7 +72,7 @@ export default function Messages({ setActive }) {
     useEffect(() => {
         if(userObject && canLoad.current){
             canLoad.current = false
-            socket.current = io('http://192.168.0.170:8000')
+            socket.current = io('http://127.0.0.1:8000')
             socket.current.emit('addUser', userObject.id)
             socket.current.on('getMessage', ({ senderId, text }) => {
                 setReceivedMessage({ senderId: senderId, text: text })
